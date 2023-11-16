@@ -35,10 +35,17 @@ body{
 
 .cabecalho-menu {
     text-align: right;
-    padding-left: 75%;
+    padding-left: 80%;
     display: flex;
     gap: 32px;
 
+}
+nav {
+    position: absolute;
+    top: 35px;
+    float: inline-end;
+    margin-top: 10px;
+    nav-left: 10px;
 }
 
 .cabecalho-menu-item {
@@ -50,6 +57,7 @@ body{
     font-weight: 400;
     font-size: 18px;
     transition: 0.5s;
+    
 } 
 
 .cabecalho-menu-item:hover {
