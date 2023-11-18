@@ -8,15 +8,12 @@
 header > #header_container {
   display: flex;
   background: rgb(217, 217, 217);
-  background: linear-gradient(
-    180deg,
-    rgba(217, 217, 217, 1) 0%,
-    rgba(80, 195, 92, 0.4822303921568627) 100%
-  );
+  background:linear-gradient(72deg, #edf8f4 1%, #3f935c 99%);
   height: 12vh;
   justify-content: space-between;
   padding: 0px 25px 0px 25px;
   align-items: center;
+  border: 1px solid rgb(220, 220, 220);
 }
 
 #header_container > #logo_container > .img_item {
@@ -46,7 +43,7 @@ header > #header_container {
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  background-color: rgba(150, 241, 150, 0.575);
+  background:linear-gradient(72deg, #edf8f4 1%, #3f935c 99%);
   width: 30%;
   padding: 15px;
 }
