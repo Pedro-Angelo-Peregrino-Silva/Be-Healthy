@@ -98,6 +98,7 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 35px;
+    margin-top: 130px;
 }
 
 .conteudo-principal-escrito-titulo{
@@ -159,64 +160,14 @@ border: 2px solid #222121;
 transition: translate 100ms
 cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 250ms;
 }
-.carousel {
-    width: 100%;
-    height: 500px;
-    position:absolute;
-    margin-top: 70%; 
-  }
-  
-  .slides {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-  }
-  
-  .slide {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: none;
-  }
-  
-  .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .navigation {
-    width: 100%;
-    height: 50px;
-    position: absolute;
-    bottom: 0; 
-    display: flex;
-    justify-content: center;
-  }
 
-   .navigation label {
-    width: 20px;
-    height: 20px;
-    background-color: #ccc;
-    border-radius: 50%;
-    margin: 10px;
-    cursor: pointer; 
-
+.imagee{
+   position: absolute;
+   left: 90px;
+   top:350px;
+   right: 50px;
+   padding-top: 730px;
   }
-
-  input{
-    display: none;
-  }
-  
-  #slide1:checked ~ .slides .slide:nth-child(1),
-  #slide2:checked ~ .slides .slide:nth-child(2),
-  #slide3:checked ~ .slides .slide:nth-child(3),
-  #slide4:checked ~ .slides .slide:nth-child(4),
-  #slide5:checked ~ .slides .slide:nth-child(5)
-   {
-    display: block;
-  }
-
 .conteudo-secundario{
     display: flex;
     flex-direction: column;
