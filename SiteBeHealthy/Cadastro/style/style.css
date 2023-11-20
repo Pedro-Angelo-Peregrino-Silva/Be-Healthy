@@ -8,11 +8,7 @@
 header > #header_container {
   display: flex;
   background: rgb(217, 217, 217);
-  background: linear-gradient(
-    180deg,
-    rgba(217, 217, 217, 1) 0%,
-    rgba(80, 195, 92, 0.4822303921568627) 100%
-  );
+  background:linear-gradient(72deg, #edf8f4 1%, #3f935c 99%);
   height: 12vh;
   justify-content: space-between;
   padding: 0px 25px 0px 25px;
@@ -20,8 +16,8 @@ header > #header_container {
 }
 
 #header_container > #logo_container > .img_item {
-  width: 90px;
-  height: 90px;
+  width: 100px;
+  height: 50px;
 }
 
 #header_container > #icon_return_container > .icon_return_item {
@@ -46,7 +42,7 @@ header > #header_container {
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  background-color: rgba(150, 241, 150, 0.575);
+  background:linear-gradient(72deg, #edf8f4 1%, #3f935c 99%);
   width: 30%;
   padding: 15px;
 }
@@ -114,7 +110,7 @@ header > #header_container {
 .btn_item {
   width: 40px;
   border-radius: 9999px;
-  border: 1px solid black;
+  border: 1px solid rgb(0, 0, 0);
 }
 
 .send_user_container {
@@ -135,10 +131,6 @@ header > #header_container {
 }
 
 .btn_send_item:hover {
-  background: linear-gradient(
-    180deg,
-    rgba(43, 41, 41, 0.274) 0%,
-    rgba(80, 195, 91, 0.973) 100%
-  );
+  background:linear-gradient(72deg, #edf8f4 1%, #3f935c 99%);
   transition: 0.9s;
 }
