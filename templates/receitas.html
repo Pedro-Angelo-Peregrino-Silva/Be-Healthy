@@ -39,7 +39,7 @@
   <main>
     <div class="container">
       <h1 class="text-center m-4">Lista de Receitas</h1>
-      <table class="table">
+      <table class="table table-success table-striped">
         <thead>
           <tr>
             <th>Título</th>
@@ -54,7 +54,7 @@
               <td>{{ receita['ingredientes'] }}</td>
               <td>
                 <form method="POST" action="{{ url_for('excluir_receita', id=receita['id']) }}">
-                  <input type="submit" value="Excluir">
+                  <input class="btn btn-sm btn-danger" type="submit" value="Excluir">
                 </form>
               </td>
             </tr>
