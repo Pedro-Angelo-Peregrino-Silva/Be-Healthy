@@ -102,12 +102,9 @@ def listar_receitas():
     else:
         # Abre o arquivo CSV em modo de leitura
         with open(cadastro_receitas_lista, 'r', newline='') as csvfile_lista:
-            # Cria um objeto de leitura CSV
             csv_reader = csv.reader(csvfile_lista)
-            # Ignora o cabeçalho se existir
-            next(csv_reader, None)
-            # Lê as receitas do arquivo CSV
-            receitas_lista = list(csv_reader)
+            next(csv_reader, None)  # Ignora o cabeçalho
+            receitas_lista = [{'id': i, 'titulo': row[0], 'ingredientes': row[1]} for i, row in enumerate(csv_reader, 1) if len(row) >= 2 and any(row)]
 
     return render_template('receitas.html', receitas=receitas_lista)
 
@@ -117,7 +114,7 @@ def form_cadastro_receita():
     return render_template('form_cadastro_receita.html')
 
 
-@app.route('//processar_cadastro_receita', methods=['POST'])
+@app.route('/processar_cadastro_receita', methods=['POST'])
 def processar_cadastro_receita():
     if request.method == 'POST':
         # Obtém os dados do formulário
@@ -143,6 +140,28 @@ def processar_cadastro_receita():
             csv_writer.writerow([titulo_receita, ingredientes_receita])
 
         return render_template('form_cadastro_receita.html', mensagem='Cadastro de receita realizado com sucesso!')
+
+
+@app.route('/excluir_receita/<int:id>', methods=['POST'])
+def excluir_receita(id):
+    # Caminho para o arquivo CSV
+    cadastro_receitas_excluir = 'cadastro_receitas.csv'
+
+    # Lê todas as receitas do arquivo CSV
+    with open(cadastro_receitas_excluir, 'r', newline='') as csvfile_receitas:
+        csv_reader = csv.reader(csvfile_receitas)
+        receitas = list(csv_reader)
+
+    # Remove a receita com o ID correspondente
+    if 0 < id <= len(receitas):
+        del receitas[id - 1]
+
+    # Escreve as receitas de volta no arquivo CSV
+    with open(cadastro_receitas_excluir, 'w', newline='') as csvfile:
+        csv_writer_excluir = csv.writer(csvfile)
+        csv_writer_excluir.writerows(receitas)
+
+    return redirect(url_for('listar_receitas'))
 
 
 if __name__ == "__main__":
